@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redditiwi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header class="reddit-header">
+        <div class="header-left">
+            <div class="logo"><a href="index.html">
+                <img src="2111589.png" alt="Logo" style="height: 2.5rem; width: auto; vertical-align: middle;">
+                <span>marilu</span></a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar en Marilu">
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="user-profile" id="userDropdown">
+                <img class="avatar" src="posa.png"></img>
+                <span>Preciosa Mariwiwi</span>
+                <i class="fas fa-chevron-down"></i>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#"><i class="fas fa-user"></i> Perfil</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar-left">
+            <nav>
+                <ul>
+                    <li class="active"><i class="fas fa-home"></i> <a href="index.html"> Home</a></li>
+                    <li><i class="fas fa-fire"></i> <a href="#"> Popular</a></li>
+                    <li><i class="fas fa-th-list"></i> <a href="index.html"> All</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="posts-container" id="posts">
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="recent-posts">
+                <h3>POSTS RECIENTES</h3>
+                <ul id="recentPostsList"></ul>
+            </div>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
