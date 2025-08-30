@@ -1,3 +1,28 @@
+// Detectar si estamos en la carpeta /r/ y ajustar las rutas base
+const BASE_PATH = window.location.pathname.includes('/r/') ? '../' : '';
+
+// Sobrescribir la función original para usar BASE_PATH
+const originalCreatePostElement = createPostElement;
+createPostElement = function(post) {
+    // Hacer una copia del post para no modificar el original
+    const modifiedPost = {...post};
+    
+    // Ajustar las URLs de medios
+    if (modifiedPost.media) {
+        modifiedPost.media = {...modifiedPost.media};
+        if (!modifiedPost.media.url.startsWith('http')) {
+            modifiedPost.media.url = BASE_PATH + modifiedPost.media.url;
+        }
+    }
+    
+    // Ajustar avatar del subreddit
+    if (modifiedPost.av_sub && !modifiedPost.av_sub.startsWith('http')) {
+        modifiedPost.av_sub = BASE_PATH + modifiedPost.av_sub;
+    }
+    
+    // Llamar a la función original con el post modificado
+    return originalCreatePostElement(modifiedPost);
+};
 
 const posts = [
     {
