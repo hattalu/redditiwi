@@ -335,6 +335,97 @@ const posts = [
                 upvotes: -100
             }]
         }]
+    },{
+        id: "7",
+        title: "I saw an angel eating a person",
+        content: "I was walking home late at night when crossing an alley I heard a person in pain, I looked towards where the sound was and I saw a person almost sucking the soul from the mouth of the person in pain, I know what you're thinking but! As soon as that 'person' saw me, a light appeared around it that blinded me and when I could see again, they were gone! It could only have been an angel with all that light that came out of nowhere! I managed to take a photo, even if it is very bright, you can see them!",
+        media:{
+            type: "image",
+            url: "destiel.png"
+        },
+        upvotes: 120,
+        av_sub: "paranormal.png",
+        user: "CelestialWitness",
+        subreddit: "r/Paranormal",
+        time: "hace 1 hora",
+        timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).getTime(),
+        comments: [{
+            user: "GhostHunter42",
+            avatar: "defaultav2.png",
+            text: "bro really was 'flashing' by some gays",
+            time: "hace 1 hora",
+            upvotes: 50,
+        },{
+            user: "Castiel",
+            avatar: "./icons/castiel.png",
+            text: "... It looks... very shiny...",
+            time: "hace 1 hora",
+            upvotes: 0,
+            replies: [{
+                user: "DeanWinchester",
+                avatar: "./icons/dean.png",
+                text: "Dammit Cas u told me they would lose their memory when you used your power",
+                time: "hace 1 hora",
+                upvotes: 20,
+                replies:[{
+                    user: "Castiel",
+                    avatar: "./icons/castiel.png",
+                    text: "I'm sorry, I think my power was unbalanced because I got distracted thinking about you.",
+                    time: "hace 1 hora",
+                    upvotes: 1,
+                    replies:[{
+                        user: "DeanWinchester",
+                        avatar: "./icons/dean.png",
+                        text: "Being romantic isn't going to save you. You better start thinking of a way to fix this.",
+                        time: "hace 1 hora",
+                        upvotes: 1
+                    }]
+                },{
+                    user: "Mountain-Bottle-272",
+                    avatar: "defav6.png",
+                    text: "What?",
+                    time: "hace 1 hora",
+                    upvotes: 0
+                },{
+                    user: "Destiel#69Fan",
+                    avatar: "destiel.png",
+                    text: "I knew Dean was gay!",
+                    time: "hace 1 hora",
+                    upvotes: 50,
+                    replies: [{
+                        user: "Destiel#5Fan",
+                        avatar: "destiel.png",
+                        text: "I always knew it!",
+                        time: "hace 1 hora",
+                        upvotes: 0
+                    },{
+                        user: "Destiel#420Fan",
+                        avatar: "destiel.png",
+                        text: "And Cas is quite possessive w that 'sucking his soul out through his mouth'!",
+                        time: "hace 1 hora",
+                        upvotes: 30
+                    },{
+                        user: "Destiel#666Fan",
+                        avatar: "destiel.png",
+                        text: "Make more fanfics!",
+                        time: "hace 1 hora",
+                        upvotes: 0
+                    },{
+                        user: "DeanWinchester",
+                        avatar: "./icons/dean.png",
+                        text: "they are like the girls from that school...",
+                        time: "hace 1 hora",
+                        upvotes: 10
+                    }]
+                }]
+            }]
+        },{
+            user: "WonTrickPhony",
+            avatar: "default-avatar.png",
+            text: "so the original theme lost in smt else...",
+            time: "hace 1 hora",
+            upvotes: 5
+        }]
     }
 ];
 
