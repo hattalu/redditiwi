@@ -1,13 +1,9 @@
-// Detectar si estamos en la carpeta /r/ y ajustar las rutas base
 const BASE_PATH = window.location.pathname.includes('/r/') ? '../' : '';
 
-// Sobrescribir la función original para usar BASE_PATH
 const originalCreatePostElement = createPostElement;
 createPostElement = function(post) {
-    // Hacer una copia del post para no modificar el original
     const modifiedPost = {...post};
     
-    // Ajustar las URLs de medios
     if (modifiedPost.media) {
         modifiedPost.media = {...modifiedPost.media};
         if (!modifiedPost.media.url.startsWith('http')) {
@@ -15,12 +11,10 @@ createPostElement = function(post) {
         }
     }
     
-    // Ajustar avatar del subreddit
     if (modifiedPost.av_sub && !modifiedPost.av_sub.startsWith('http')) {
         modifiedPost.av_sub = BASE_PATH + modifiedPost.av_sub;
     }
     
-    // Llamar a la función original con el post modificado
     return originalCreatePostElement(modifiedPost);
 };
 
@@ -219,6 +213,67 @@ const posts = [
                     text: "OP is a very dedicated fan (stalker) of him and created a bunch of accounts to give him upvotes on every message he left.",
                     time: "hace 1 día",
                     upvotes: 5
+                }]
+            }]
+        }]
+    },{
+        id: "5",
+        title: "when I lead the Matra I have 2 unwritten rules:",
+        content: "#1 <br> #2",
+        upvotes: 153,
+        av_sub: "dadjokes.png",
+        user: "General Mahahahahahamatra",
+        subreddit: "r/dadjokes",
+        time: "hace 2 horas",
+        comments: [{
+            user: "General Mahahahahahamatra",
+            avatar: "./icons/cyno.jpg",
+            text: "Get it? Because they're unwritten rules, so you can't read them.",
+            time: "hace 2 horas",
+            upvotes: 55,
+            replies: [{
+                user: "Ok-Might3341",
+                avatar: "defav5.png",
+                text: "You own this subreddit, OP",
+                time: "hace 2 horas",
+                upvotes: 10
+            },{
+                user: "PositiveElk3927",
+                avatar: "defav3.png",
+                text:  "coming to this subreddit just to see OP's posts",
+                time: "hace 2 horas",
+                upvotes: 5
+            }]
+        },{
+            user: "Tighnari",
+            avatar: "./icons/tighnari.jpg",
+            image: "cynojoke.jpg",
+            time: "hace 2 horas",
+            upvotes: 53,
+            replies: [{
+                user: "General Mahahahahahamatra",
+                avatar: "./icons/cyno.jpg",
+                text: "dw Nari I have a written rule to love you forever.",
+                time: "hace 2 horas",
+                upvotes: 50,
+                replies: [{
+                    user: "PositiveElk3927",
+                    avatar: "defav3.png",
+                    text: "wtf smooth asf",
+                    time: "hace 2 horas",
+                    upvotes: 5
+                },{
+                    user: "llamageddon01",
+                    avatar: "defav6.png",
+                    text: "TID how to use humor to win over my gf",
+                    time: "hace 2 horas",
+                    upvotes: 3
+                },{
+                    user: "Tighnari",
+                    avatar: "./icons/tighnari.jpg",
+                    text: "There’s so mushroom in my heart for you.",
+                    time: "hace 2 horas",
+                    upvotes: 60
                 }]
             }]
         }]
