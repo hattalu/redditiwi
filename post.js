@@ -187,3 +187,60 @@ document.querySelectorAll(".downvote").forEach(btn => {
         }
         });
 });
+
+function displayRecentPostsInPost() {
+    const recentList = document.getElementById("recentPostsList");
+    if (!recentList) return;
+    recentList.innerHTML = "";
+    let postsToUse = [];
+    if (typeof posts !== 'undefined') {
+        postsToUse = posts;
+    } else {
+        const savedPosts = localStorage.getItem('posts');
+        postsToUse = savedPosts ? JSON.parse(savedPosts) : [];
+    }
+    const sortedPosts = [...postsToUse].sort((a, b) => {
+        if (a.timestamp && b.timestamp) {
+            return b.timestamp - a.timestamp;
+        }
+        return parseTimeToMs(b.time) - parseTimeToMs(a.time);
+    });
+    sortedPosts.slice(0, 5).forEach(post => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <div class="recent-post-item">
+                <div class="recent-post-meta">
+                    <span class="recent-user">${post.user}</span>
+                    <span> • </span>
+                    <span class="recent-time">${post.time}</span>
+                </div>
+                <div class="recent-title">${post.title}</div>
+                <div class="recent-votes">${post.upvotes} upvotes</div>
+            </div>
+        `;
+        recentList.appendChild(li);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const post = JSON.parse(localStorage.getItem("selectedPost"));
+    const comments = JSON.parse(localStorage.getItem("selectedComments")) || [];
+    
+    if (post && typeof createPostElement === 'function') {
+        const postDetail = document.getElementById("postDetail");
+        if (postDetail) {
+            postDetail.innerHTML = "";
+            postDetail.appendChild(createPostElement(post));
+        }
+        const commentsContainer = document.getElementById("comments");
+        if (commentsContainer) {
+            commentsContainer.innerHTML = `
+                <h4>Comentarios</h4>
+                <div class="comment-list">
+                    ${renderComments(comments)}
+                </div>
+            `;
+        }
+    }
+    displayRecentPostsInPost();
+});

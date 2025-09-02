@@ -32,6 +32,7 @@ const posts = [
         subreddit: "r/Scaramouche",
         av_sub: "./icons/yop.png",
         time: "hace 12 días",
+        timestamp: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).getTime(),
         comments: [{
             user: "Lu",
             avatar: "./icons/yop.png",
@@ -75,6 +76,7 @@ const posts = [
         av_sub: "archi.jpg",
         subreddit: "r/architecture",
         time: "hace 5 días",
+        timestamp: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).getTime(),
         comments:[{
             user: "kool",
             avatar: "default-avatar.png",
@@ -119,6 +121,7 @@ const posts = [
         subreddit: "r/WebEvent",
         av_sub: "web.jpg",
         time: "hace 2 días",
+        timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).getTime(),
         comments: [{
             user: "ragebaiter",
             avatar: "default-avatar.png",
@@ -177,6 +180,7 @@ const posts = [
         user: "SaitamasNumber1Fan",
         subreddit: "r/AmItheAsshole",
         time: "hace 1 día",
+        timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).getTime(),
         comments: [{
             user: "justrandomguy",
             avatar: "defav3.png",
@@ -225,6 +229,7 @@ const posts = [
         user: "General Mahahahahahamatra",
         subreddit: "r/dadjokes",
         time: "hace 2 horas",
+        timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).getTime(),
         comments: [{
             user: "General Mahahahahahamatra",
             avatar: "./icons/cyno.jpg",
@@ -246,7 +251,8 @@ const posts = [
             }]
         },{
             user: "Tighnari",
-            avatar: "./icons/tighnari.jpg",
+            avatar: "./icons/tighnari.png",
+            text: "...",
             image: "cynojoke.jpg",
             time: "hace 2 horas",
             upvotes: 53,
@@ -270,11 +276,63 @@ const posts = [
                     upvotes: 3
                 },{
                     user: "Tighnari",
-                    avatar: "./icons/tighnari.jpg",
-                    text: "There’s so mushroom in my heart for you.",
+                    avatar: "./icons/tighnari.png",
+                    text: "...There’s so mushroom in my heart for you",
                     time: "hace 2 horas",
                     upvotes: 60
                 }]
+            }]
+        }]
+    },{
+        id: "6",
+        title: "AITA for giving him juice instead of wine?",
+        content: "I (M30) have a bar in town where my husband (M30) goes to get some free drinks, I'm not going to let him get drunk that often, so I've been serving him grape juice instead. He complains now but he hadn't really noticed until a few days ago when some green-drunkard who was banned came to tell him what was going on. Now he hasn't stopped complaining about my... lack of romance? So AITA?",
+        upvotes: 90,
+        av_sub: "aita.png",
+        user: "NoctuaFlames",
+        subreddit: "r/AmItheAsshole",
+        time: "hace 5 horas",
+        timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000).getTime(),
+        comments: [{
+            user: "PavoOcellus",
+            avatar: "./icons/kaeya.png",
+            text: "You could have let it ferment and it would have made a good wine, that's unromantic! And you could tell me, I can drink one or two glasses of grape juice if it's with you.",
+            time: "hace 5 horas",
+            upvotes: 10,
+            replies: [{
+                user: "NoctuaFlames",
+                avatar: "./icons/diluc.png",
+                text: "Agree, but it was fun watching you flirt, pretending to be drunk when you weren't.",
+                time: "hace 5 horas",
+                upvotes: 15,
+                replies: [{
+                    user: "PavoOcellus",
+                    avatar: "./icons/kaeya.png",
+                    text: "Ah, you were just making fun of me! I'll go with the Darknight Hero, he'll surely give me wine and love.",
+                    time: "hace 5 horas",
+                    upvotes: 10,
+                    replies:[{
+                        user: "NoctuaFlames",
+                        avatar: "./icons/diluc.png",
+                        text: "Not sure about the wine, but there's definitely a lot of love waiting for you.",
+                        time: "hace 5 horas",
+                        upvotes: 5
+                    }]
+                }]
+            }]
+        },{
+            user: "Wise_Chipmunk_4367",
+            avatar: "defav6.png",
+            text: "OP really came to post just to flirt with his husband in front of everyone 💀💀 YTA for reminding me that I am alone.",
+            time: "hace 4 horas",
+            upvotes: 180,
+            replies: [{
+                user: "PavoOcellus",
+                avatar: "./icons/kaeya.png",
+                text: "Haha, it was my idea all along😜",
+                image: "./icons/kaeya.png",
+                time: "hace 4 horas",
+                upvotes: -100
             }]
         }]
     }
@@ -376,8 +434,15 @@ function createPostElement(post) {
 
 function displayRecentPosts() {
     const recentList = document.getElementById("recentPostsList");
+    if (!recentList) return;
     recentList.innerHTML = "";
-    posts.slice(0, 5).forEach(post => {
+    const sortedPosts = [...posts].sort((a, b) => {
+        if (a.timestamp && b.timestamp) {
+            return b.timestamp - a.timestamp;
+        }
+        return parseTimeToMs(b.time) - parseTimeToMs(a.time);
+    });
+    sortedPosts.slice(0, 5).forEach(post => {
         const li = document.createElement("li");
         li.innerHTML = `
             <div class="recent-post-item">
