@@ -329,8 +329,8 @@ const posts = [
             replies: [{
                 user: "PavoOcellus",
                 avatar: "./icons/kaeya.png",
-                text: "Haha, it was my idea all along😜",
-                image: "./icons/kaeya.png",
+                text: "That was my plan all along",
+                image: "kaeluc.png",
                 time: "hace 4 horas",
                 upvotes: -100
             }]
@@ -445,7 +445,7 @@ function displayRecentPosts() {
     sortedPosts.slice(0, 5).forEach(post => {
         const li = document.createElement("li");
         li.innerHTML = `
-            <div class="recent-post-item">
+            <div class="recent-post-item" data-post-id="${post.id}">
                 <div class="recent-post-meta">
                     <span class="recent-user">${post.user}</span>
                     <span> • </span>
@@ -457,6 +457,34 @@ function displayRecentPosts() {
         `;
         recentList.appendChild(li);
     });
+    attachRecentPostListeners();
+}
+
+function attachRecentPostListeners() {
+    document.querySelectorAll('.recent-post-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const postId = this.getAttribute('data-post-id');
+            openPostFromId(postId);
+        });
+        item.style.cursor = 'pointer';
+        item.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#1a1a1b';
+        });
+        item.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';
+        });
+    });
+}
+
+function openPostFromId(postId) {
+    const post = posts.find(p => p.id === postId);
+    if (post) {
+        localStorage.setItem("selectedPost", JSON.stringify(post));
+        localStorage.setItem("selectedComments", JSON.stringify(post.comments || []));
+        window.location.href = "post.html";
+    } else {
+        console.error("Post no encontrado con ID:", postId);
+    }
 }
 
 function displayPosts() {
