@@ -426,6 +426,136 @@ const posts = [
             time: "hace 1 hora",
             upvotes: 5
         }]
+    },{
+        id: "8",
+        title: "Sett (Co-leader of Hearsteel) Interview For Fans",
+        content: "The most shocking revelation came when Sett was asked about his romantic interests <br> <blockquote> <p> Interviewer: So Sett, every fan wants to know... Do you like someone right now? <br>Sett: Haha, it's not just right now, it's something that has lasted a lifetime. <br> Interviewer: Wow, that's deep! Can you give us more details? <br>Sett: Well, it's someone very special to me, but I can't reveal their identity just yet, I still have to know what he thinks.</p> </blockquote>",
+        upvotes: 800,
+        av_sub: "heartsteel.png",
+        user: "ToughStudent4334",
+        subreddit: "r/HeartsteelFans",
+        time: "hace 3 horas",
+        timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).getTime(),
+        comments: [{
+            user: "HankBoi_WasTaken",
+            avatar: "defav4.png",
+            text: "He??",
+            time: "hace 3 horas",
+            upvotes: -15,
+            replies: [{
+                user: "PandaCatRacoon",
+                avatar: "defav5.png",
+                text: "Bro is the only one who doesn't know they're not straight",
+                time: "hace 3 horas",
+                upvotes: 20
+            }]
+        },{
+            user: "ShadXII",
+            avatar: "defav6.png",
+            text: "Whyy I was faithful to Sett I can't believe he has a partner😔",
+            time: "hace 3 horas",
+            upvotes: -10,
+            replies: [{
+                user: "PandaCatRacoon",
+                avatar: "defav5.png",
+                text: "Lmao sure you probably had a chance with him if he was single",
+                time: "hace 3 horas",
+                upvotes: 15,
+                replies: [{
+                    user: "rwwaela",
+                    avatar: "defav3.png",
+                    text: "I mean yeah that guy is pretty delulu, but look at Sett, who wouldn't want something with him? Those muscles...🤤",
+                    time: "hace 3 horas",
+                    upvotes: -3,
+                    replies: [{
+                        user: "cybirddude",
+                        avatar: "defaultav2.jpg",
+                        text: "I think all fans are agree so why you have negative votes? lol",
+                        time: "hace 3 horas",
+                        upvotes: 0,
+                        replies: [{
+                            user: "rwwaela",
+                            avatar: "defav3.png",
+                            text: "I think they already answered you further down in the post😭",
+                            time: "hace 2 horas",
+                            upvotes: 0
+                        }]
+                    },{
+                        user: "LunariAp",
+                        avatar: "./icons/aphelios.png",
+                        text: "You're looking at my boyfriend too much.",
+                        time: "hace 3 horas",
+                        upvotes: -1,
+                        replies: [{
+                            user: "PandaCatRacoon",
+                            avatar: "defav5.png",
+                            text: "Lol another delulu",
+                            time: "hace 3 horas",
+                            upvotes: -1,
+                        },{
+                            user: "rwwaela",
+                            avatar: "defav3.png",
+                            text: "Uhm... in another interview there was a leak with the names they used on their networks and... this person is Aphelios💀",
+                            time: "hace 3 horas",
+                            upvotes: 0,
+                            replies: [{
+                                user: "PandaCatRacoon",
+                                avatar: "defav5.png",
+                                text: "help i forgot how to erase a comment",
+                                time: "hace 3 horas",
+                                upvotes: 1,
+                            }]
+                        }]
+                    }]
+                }]
+            }]
+        },{
+            user: "cybirddude",
+            avatar: "defaultav2.jpg",
+            text: "Wait, so Sett is dating Aphelios??",
+            time: "hace 3 horas",
+            upvotes: 10,
+            replies: [{
+                user: "LunariAp",
+                avatar: "./icons/aphelios.png",
+                text: "arent you a smart one...",
+                time: "hace 3 horas",
+                upvotes: 0,
+                replies: [{
+                    user: "MuscleSt",
+                    avatar: "./icons/sett.png",
+                    text: "babe dont be rude to our fans...",
+                    time: "hace 3 horas",
+                    upvotes: 15,
+                },{
+                    user: "shadXII",
+                    avatar: "defav6.png",
+                    text: "I always thought Aphelios was shy...",
+                    time: "hace 3 horas",
+                    upvotes: -1,
+                    replies: [{
+                        user: "LunariAp",
+                        avatar: "./icons/aphelios.png",
+                        text: "nah I just don't talk much because Sett makes me hoarse every night.",
+                        time: "hace 3 horas",
+                        upvotes: 105,
+                        replies: [{
+                            user: "MuscleSt",
+                            avatar: "./icons/sett.png",
+                            text: "Okay it's time to step away from the keyboard",
+                            time: "hace 3 horas",
+                            upvotes: 20,
+                        },{
+                            user: "cybirddude",
+                            avatar: "defaultav2.jpg",
+                            text: "omg Idk if I should be happy or ashamed😭",
+                            time: "hace 3 horas",
+                            upvotes: 5
+                        }]
+                    }]
+                }]
+            }]
+        }]
     }
 ];
 
