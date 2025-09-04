@@ -431,6 +431,10 @@ const posts = [
         title: "Sett (Co-leader of Hearsteel) Interview For Fans",
         content: "The most shocking revelation came when Sett was asked about his romantic interests <br> <blockquote> <p> Interviewer: So Sett, every fan wants to know... Do you like someone right now? <br>Sett: Haha, it's not just right now, it's something that has lasted a lifetime. <br> Interviewer: Wow, that's deep! Can you give us more details? <br>Sett: Well, it's someone very special to me, but I can't reveal their identity just yet, I still have to know what he thinks.</p> </blockquote>",
         upvotes: 800,
+        media: {
+            type: "image",
+            url: "vogue.png",
+        },
         av_sub: "heartsteel.png",
         user: "ToughStudent4334",
         subreddit: "r/HeartsteelFans",
