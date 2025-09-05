@@ -578,7 +578,7 @@ const posts = [
             upvotes: -1,
             replies: [{
                 user: "LoverBoy1234",
-                avatar: "defav2.png",
+                avatar: "defaultav2.png",
                 text: "I... what?",
                 time: "hace 28 minutos",
                 upvotes: 5,
@@ -644,7 +644,7 @@ const posts = [
                 upvotes: 1,
                 replies: [{
                     user: "LoverBoy1234",
-                    avatar: "defav2.png",
+                    avatar: "defaultav2.png",
                     text: "Bad things? Anymore? 😭",
                     time: "hace 20 minutos",
                     upvotes: 10,
@@ -656,7 +656,7 @@ const posts = [
                     upvotes: 100,
                     replies: [{
                         user: "LoverBoy1234",
-                        avatar: "defav2.png",
+                        avatar: "defaultav2.png",
                         text: "Awww",
                         time: "hace 20 minutos",
                         upvotes: 0,
@@ -684,6 +684,9 @@ const posts = [
                 upvotes: 0,
             }]
         }]
+    },{
+        id: "10",
+        title: "",
     }
 ];
 
