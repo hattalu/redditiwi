@@ -560,6 +560,130 @@ const posts = [
                 }]
             }]
         }]
+    },{
+        id: "9",
+        title: "What is the most romantic thing you have done for your partner?",
+        content: "I want to hear your stories, I want to do something special for my partner but I don't know what, so I want to hear your experiences to get ideas.",
+        upvotes: 445,
+        av_sub: "romance.jpg",
+        user: "LoverBoy1234",
+        subreddit: "r/Romance",
+        time: "hace 30 minutos",
+        timestamp: new Date(Date.now() - 30 * 60 * 1000).getTime(),
+        comments: [{
+            user: "MoonJo",
+            avatar: "./icons/MoonJo.jpg",
+            text: "I made him a bracelet with the teeth of all his loved ones🙂",
+            time: "hace 29 minutos",
+            upvotes: -1,
+            replies: [{
+                user: "LoverBoy1234",
+                avatar: "defav2.png",
+                text: "I... what?",
+                time: "hace 28 minutos",
+                upvotes: 5,
+            },{
+                user: "JongWoo",
+                avatar: "./icons/jongwoo.jpg",
+                text: "and it is well secured, it doesn't come off even when I'm running",
+                time: "hace 28 minutos",
+                upvotes: 1,
+                replies: [{
+                    user: "MoonJo",
+                    avatar: "./icons/MoonJo.jpg",
+                    text: "I didn't want it to come out when we were having intense nights.",
+                    time: "hace 28 minutos",
+                    upvotes: 1
+                }]
+            },{
+                user: "StarryEyed",
+                avatar: "defav3.png",
+                text: "eh... like, their loved ones who passed away?",
+                time: "hace 27 minutos",
+                upvotes: -2,
+                replies: [{
+                    user: "MoonJo",
+                    avatar: "./icons/MoonJo.jpg",
+                    text: "no, his favorite people are still alive... yet.",
+                    time: "hace 27 minutos",
+                    upvotes: 1,
+                    replies: [{
+                        user: "JongWoo",
+                        avatar: "./icons/jongwoo.jpg",
+                        text: "Don't say yet.",
+                        time: "hace 27 minutos",
+                        upvotes: 1,
+                        replies: [{
+                            user: "MoonJo",
+                            avatar: "./icons/MoonJo.jpg",
+                            text: "Yes, jagiya💕",
+                            time: "hace 27 minutos",
+                            upvotes: 1
+                        }]
+                    }]
+                }]
+            },{
+                user: "QuietStorm",
+                avatar: "defav4.png",
+                text: "me rn",
+                image: "mom.png",
+                time: "hace 26 minutos",
+                upvotes: 100,
+            }]
+        },{
+            user: "llamagedon01",
+            avatar: "defav5.png",
+            text: "911 theres a crazy person here",
+            time: "hace 20 minutos",
+            upvotes: 50,
+            replies: [{
+                user: "JongWoo",
+                avatar: "./icons/jongwoo.jpg",
+                text: "Dw he doesn't do bad things to people anymore",
+                time: "hace 20 minutos",
+                upvotes: 1,
+                replies: [{
+                    user: "LoverBoy1234",
+                    avatar: "defav2.png",
+                    text: "Bad things? Anymore? 😭",
+                    time: "hace 20 minutos",
+                    upvotes: 10,
+                },{
+                    user: "MoonJo",
+                    avatar: "./icons/MoonJo.jpg",
+                    text: "If no one harms my jagiya, no one will get hurt.",
+                    time: "hace 20 minutos",
+                    upvotes: 100,
+                    replies: [{
+                        user: "LoverBoy1234",
+                        avatar: "defav2.png",
+                        text: "Awww",
+                        time: "hace 20 minutos",
+                        upvotes: 0,
+                        replies:[{
+                            user: "llamagedon01",
+                            avatar: "defav5.png",
+                            text: "wdym aww💀",
+                            time: "hace 19 minutos",
+                            upvotes: 1,
+                        }]
+                    }]
+                }]
+            }]
+        },{
+            user: "Lu",
+            avatar: "./icons/yop.png",
+            text: "Uhm I made this mini reddit 😀",
+            time: "hace 18 minutos",
+            upvotes: 10,
+            replies: [{
+                user: "LoverBoy1234",
+                avatar: "defav2.png",
+                text: "bro writing with the voices in her head😔",
+                time: "hace 18 minuos",
+                upvotes: 0,
+            }]
+        }]
     }
 ];
 
