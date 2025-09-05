@@ -684,9 +684,6 @@ const posts = [
                 upvotes: 0,
             }]
         }]
-    },{
-        id: "10",
-        title: "",
     }
 ];
 
