@@ -779,7 +779,8 @@ const posts = [
             time: "hace 4 minutos",
             upvotes: 0
         }]
-
+    },{
+        id: "12",
     }
 ];
 
