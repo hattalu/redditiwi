@@ -684,6 +684,102 @@ const posts = [
                 upvotes: 0,
             }]
         }]
+    },{
+        id: "10",
+        title: "I found this thing from the same person who made the website",
+        content: "Idk if it's another website, it doesn't look like it? more like a colorful thing? It's out of focus, but who knows",
+        upvotes: 200,
+        user: "notahacker",
+        subreddit: "r/WebEvent",
+        av_sub: "web.jpg",
+        media: {
+            type: "image",
+            url: "misterio.png"
+        },
+        time: "hace 12 horas",
+        timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).getTime(),
+        comments:[{
+            user: "GhostHunter42",
+            avatar: "defaultav2.png",
+            text: "It seems like someone is creating hype and hasn't even finished the gift yet...",
+            time: "hace 12 horas",
+            upvotes: 150,
+            replies: [{
+                user: "notahacker",
+                avatar: "default-avatar.png",
+                text: "agree tsk tsk",
+                time: "hace 12 horas",
+                upvotes: 100
+            }]
+        }]
+    },{
+        id: "11",
+        title: "I just want to share a photo of my boyfriend bc he's really cute",
+        content: "He has to wear a mask for his job, so I took advantage of the fact that he didn't have one to take a picture of him smiling at me💕",
+        upvotes: 110,
+        user: "NortonC",
+        subreddit: "r/Romance",
+        media: {
+            type: "image",
+            url: "whydissomad.png"
+        },
+        av_sub: "romance.jpg",
+        time: "hace 5 minutos",
+        timestamp: new Date(Date.now() - 30 * 60 * 1000).getTime(),
+        comments: [{
+            user: "LoverBoy1234",
+            avatar: "defaultav2.jpg",
+            text: "You should put his mask back on i think hes a lil upset💀",
+            time: "hace 5 minutos",
+            upvotes: -1,
+            replies: [{
+                user: "AesopC",
+                avatar: "./icons/aesop.png",
+                text: "I don't like taking pictures, but I'm not upset since NonNon-san asked me for one photo for him.",
+                time: "hace 5 minutos",
+                upvotes: 15,
+                replies: [{
+                    user: "NortonC",
+                    avatar: "./icons/norton.png",
+                    text: "Your NonNon-san",
+                    time: "hace 5 minutos",
+                    upvotes: 10,
+                    replies: [{
+                        user: "AesopC",
+                        avatar: "./icons/aesop.png",
+                        text: "Ah- yes, my NonNon-san",
+                        upvotes: 1
+                    }]
+                }]
+            },{
+                user: "StarryEyed",
+                avatar: "defav3.png",
+                text: "I was going to say the same thing until I read his comment, it seems that he is quite cute in an unique way",
+                time: "hace 5 minutos",
+                upvotes: 1,
+                replies: [{
+                    user: "NortonC",
+                    avatar: "./icons/norton.png",
+                    text: "yes MY boyfriend is really cute in every way",
+                    time: "hace 5 minutos",
+                    upvotes: 1,
+                    replies: [{
+                        user: "StarryEyed",
+                        avatar: "defav3.png",
+                        text: "omg ok nobodys gonna steal YOUR boyfriend",
+                        time: "hace 5 minutos",
+                        upvotes: 1,
+                    }]
+                }]
+            }]
+        },{
+            user: "llamagedon01",
+            avatar: "defav5.png",
+            text: "after that post with the tooth psycho, I thought this would be similar, but it only turns out to be a couple in love LAME I almost prefer the psychos",
+            time: "hace 4 minutos",
+            upvotes: 0
+        }]
+
     }
 ];
 
