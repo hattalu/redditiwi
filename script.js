@@ -777,10 +777,8 @@ const posts = [
             avatar: "defav5.png",
             text: "after that post with the tooth psycho, I thought this would be similar, but it only turns out to be a couple in love LAME I almost prefer the psychos",
             time: "hace 4 minutos",
-            upvotes: 0
+            upvotes: -10
         }]
-    },{
-        id: "12",
     }
 ];
 
