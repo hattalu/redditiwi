@@ -644,7 +644,7 @@ const posts = [
                 upvotes: 1,
                 replies: [{
                     user: "LoverBoy1234",
-                    avatar: "defaultav2.png",
+                    avatar: "defaultav2.jpg",
                     text: "Bad things? Anymore? 😭",
                     time: "hace 20 minutos",
                     upvotes: 10,
@@ -656,7 +656,7 @@ const posts = [
                     upvotes: 100,
                     replies: [{
                         user: "LoverBoy1234",
-                        avatar: "defaultav2.png",
+                        avatar: "defaultav2.jpg",
                         text: "Awww",
                         time: "hace 20 minutos",
                         upvotes: 0,
