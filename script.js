@@ -779,6 +779,41 @@ const posts = [
             time: "hace 4 minutos",
             upvotes: -10
         }]
+    },{
+        id: "12",
+        title: "AITA for hacking my partner's phone to fill it with naked pictures of me so he would have something to entertain himself with during work?",
+        content: "I(M22) am a retired hacker and although my husband(M25) doesn't need to work because I've told him I can support him without a problem, he likes to go from time to time to help out at the store where he used to work, because he's that kind and considerate person that everyone could love but that is only mine. Anyway, I didn't want him to get bored at work since we were far away so I sent him pictures so he'd have fun and want to come back soon (which worked), but he was angry and scolding me even while I was sucking him off. So AITA for giving fun to my husband?",
+        upvotes: 100,
+        user: "BuNny",
+        subreddit: "r/AmItheAsshole",
+        av_sub: "aita.png",
+        time: "hace 2 minutos",
+        timestamp: new Date(Date.now() - 2 * 60 * 1000).getTime(),
+        comments: [{
+            user: "Aoba",
+            avatar: "./icons/aoba.jpg",
+            text: "NOIZ DELETE THIS POST! How can you write that you-- to me... omg",
+            time: "hace 2 minutos",
+            upvotes: 10,
+            replies: [{
+                user: "BuNny",
+                avatar: "./icons/noiz.jpg",
+                text: "I just wrote that I suck you off, I didn't put how you push my head all the way in your big dick to keep me from breathing as 'punishment'.",
+                time: "hace 2 minutos",
+                upvotes: 15,
+                replies: [{
+                    user: "Aoba",
+                    avatar: "./icons/aoba.jpg",
+                    text: "NOIZ!",
+                    time: "hace 2 minutos",
+                    upvotes: 10,
+                },{
+                    user: "DestielFan69",
+                    avatar: "defaultav2.jpg",
+                    text: "Please continue, this could be used for a fanfic!"
+                }]
+            }]
+        }]
     }
 ];
 
