@@ -725,7 +725,7 @@ const posts = [
         },
         av_sub: "romance.jpg",
         time: "hace 5 minutos",
-        timestamp: new Date(Date.now() - 30 * 60 * 1000).getTime(),
+        timestamp: new Date(Date.now() - 5 * 60 * 1000).getTime(),
         comments: [{
             user: "LoverBoy1234",
             avatar: "defaultav2.jpg",
