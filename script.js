@@ -813,6 +813,19 @@ const posts = [
                     text: "Please continue, this could be used for a fanfic!"
                 }]
             }]
+        },{
+            user: "LOLOLOL",
+            avatar: "./icons/saeyoung.jpg",
+            text: "NTA, FOR A FELLOW HACKER, YOU ACTUALLY GAVE ME A GOOD IDEA FOR MY HUSBAND, THANK YOU",
+            time: "hace 1 minuto",
+            upvotes: 5,
+            replies: [{
+                user: "JH",
+                avatar: "./icons/jumin.jpg",
+                text: "I'll prefer for you to wait for me naked in the bed, but I like the idea of your photos on my phone too.",
+                time: "hace 1 minuto",
+                upvotes: 10
+            }]
         }]
     }
 ];
