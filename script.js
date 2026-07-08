@@ -810,7 +810,8 @@ const posts = [
                 },{
                     user: "DestielFan69",
                     avatar: "defaultav2.jpg",
-                    text: "Please continue, this could be used for a fanfic!"
+                    text: "Please continue, this could be used for a fanfic!",
+                    upvotes: 1,
                 }]
             }]
         },{
@@ -824,7 +825,14 @@ const posts = [
                 avatar: "./icons/jumin.jpg",
                 text: "I'll prefer for you to wait for me naked in the bed, but I like the idea of your photos on my phone too.",
                 time: "hace 1 minuto",
-                upvotes: 10
+                upvotes: 10,
+                replies: [{
+                    user: "LOLOLOL",
+                    avatar: "./icons/saeyoung.jpg",
+                    text: "Ohmy mr. Han, you are so indecent~~ Ill be waiting for you in bed<3",
+                    time: "hace 1 minuto",
+                    upvotes: 5,
+                }]
             }]
         }]
     }
