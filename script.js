@@ -5,9 +5,20 @@ createPostElement = function(post) {
     const modifiedPost = {...post};
     
     if (modifiedPost.media) {
-        modifiedPost.media = {...modifiedPost.media};
-        if (!modifiedPost.media.url.startsWith('http')) {
-            modifiedPost.media.url = BASE_PATH + modifiedPost.media.url;
+        if (Array.isArray(modifiedPost.media)) {
+            modifiedPost.media = modifiedPost.media.map(item => {
+                const newItem = {...item};
+                if (newItem.url && !newItem.url.startsWith('http')) {
+                    newItem.url = BASE_PATH + newItem.url;
+                }
+                return newItem;
+            });
+        } 
+        else {
+            modifiedPost.media = {...modifiedPost.media};
+            if (modifiedPost.media.url && !modifiedPost.media.url.startsWith('http')) {
+                modifiedPost.media.url = BASE_PATH + modifiedPost.media.url;
+            }
         }
     }
     
@@ -166,7 +177,7 @@ const posts = [
             },{
                 user: "FormalTop1013",
                 avatar: "defav5.png",
-                text: "do the right click thing -> inspect",
+                text: "do the right click thing -> inspect FOR EVERYTHING",
                 time: "14h ago",
                 upvotes: 18
             }
@@ -710,6 +721,12 @@ const posts = [
                 text: "agree tsk tsk",
                 time: "hace 12 horas",
                 upvotes: 100
+            },{
+                user: "Lu",
+                avatar: "./icons/yop.png",
+                text: "ja si lo terminé yo del pasado jaque mate ateos",
+                time: "hace 12 minutos",
+                upvotes: 500
             }]
         }]
     },{
@@ -835,6 +852,134 @@ const posts = [
                 }]
             }]
         }]
+    },{
+        id: "13",
+        title: "I found a page with some strange letters",
+        content: "It looks like a page made to show love to someone, but as I flipped through the letters it looked increasingly strange; if anyone can figure something out, I'll leave it here.",
+        upvotes: 50,
+        user: "notahacker",
+        subreddit: "r/WebEvent",
+        av_sub: "web.jpg",
+        time: "hace 1 hora",
+        timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).getTime(),
+        comments: [{
+            user: "GhostHunter42",
+            avatar: "defaultav2.png",
+            text: "Ooh this is like an ARG, I love this kind of thing, I hope they don't make it too hard to solve.",
+            time: "hace 1 hora",
+            upvotes: 20,
+            replies: [{
+                user: "Lu",
+                avatar: "./icons/yop.png",
+                text: "(It will be, I don't have enough imagination to do something really big)",
+                time: "hace 1 hora",
+                upvotes: 1,
+                replies: [{
+                    user: "GhostHunter42",
+                    avatar: "defaultav2.png",
+                    text: "Bro actually used her last two brain cells to create this🙏",
+                    time: "hace 1 hora",
+                    upvotes: 1
+                }]
+            }]
+        },{
+            user: "Lu",
+            avatar: "./icons/yop.png",
+            text: "HOLA MI AMOR, HICE ESTO COMO ALGO CHIQUITO PARA QUE TE DIVIERTAS, TE AMO MUCHOOO :3 TAMBIEN DEBERIAS VER ESTE REDDIT OTRA VEZ, TAL VEZ HAYAN NUEVAS COSITAS POR AHI QN SABE",
+            time: "hace 1 hora",
+            upvotes: 100
+        }]
+    },{
+        id: "14",
+        title: "IS MY BRO COOKED??",
+        content: "I have a friend I've known for a couple of years. He's quite nihilistic; in fact, he's never really shown any interest in anything, or so I thought until yesterday when, while we were eating with other friends, he got up to go to the bathroom and left his phone on the table. I'm gonna be honest, he was receiving several messages from a guy, and the way he talks is incredible. I've attached a photo of how he talks to us and how he talks to that other person, hes like other person wtf?? is he cooked fr??",
+        upvotes: 300,
+        user: "Kotarou",
+        subreddit: "r/Romance",
+        av_sub: "romance.jpg",
+        media: [
+            { type: "image", url: "./reito/11.png" },
+            { type: "image", url: "./reito/12.png" },
+            { type: "image", url: "./reito/13.png" },
+            { type: "image", url: "./reito/01.png" },
+            { type: "image", url: "./reito/02.png" },
+            { type: "image", url: "./reito/03.png" },
+            { type: "image", url: "./reito/04.png" },
+            { type: "image", url: "./reito/05.png" },
+        ],
+        time: "hace 1 minuto",
+        timestamp: new Date(Date.now() - 1 * 60 * 1000).getTime(),
+        comments: [{
+            user: "Towa",
+            avatar: "./icons/reitowa.jpg",
+            text: "?",
+            time: "hace 1 minuto",
+            upvotes: 0,
+            replies: [{
+                user: "Rei",
+                avatar: "./icons/reitowa.jpg",
+                text: "aw you save my name with a heart on it💖",
+                time: "hace 1 minuto",
+                upvotes: 1,
+                replies: [{
+                    user: "Towa",
+                    avatar: "./icons/reitowa.jpg",
+                    text: "yeah you are my boyfriend, i algo have your chat pinned on my phone",
+                    image: "./reito/14.png",
+                    time: "hace 1 minuto",
+                    upvotes: 5,
+                    replies: [{
+                        user: "Kotarou",
+                        avatar: "./icons/kotarou.jpg",
+                        text: "YOU SAVED MY NAME LIKE KOT????",
+                        time: "hace 1 minuto",
+                        upvotes: 0,
+                        replies: [{
+                            user: "Towa",
+                            avatar: "./icons/reitowa.jpg",
+                            text: "your name is too long, i got lazy",
+                            time: "hace 1 minuto",
+                            upvotes: -1
+                        }]
+                    }]
+                }]
+            }]
+        },{
+            user: "NC-chan",
+            avatar: "defav4.png",
+            text: "the monosyllables answers LMAO he really doesnt want to talk with you",
+            time: "hace 1 minuto",
+            upvotes: 5,
+            replies: [{
+                user: "Towa",
+                avatar: "./icons/reitowa.jpg",
+                text: "nah i talk like that with everyone, except Rei",
+                image: "./reito/10.png",
+                time: "hace 1 minuto",
+                upvotes: 1,
+            }]
+        },{
+            user: "TheGossipGuy",
+            avatar: "defav5.png",
+            text: "why the arata guy knows about the relationship and not the other two?",
+            time: "hace 1 minuto",
+            upvotes: 3,
+            replies: [{
+                user: "Towa",
+                avatar: "./icons/reitowa.jpg",
+                text: "arata gives me photos of Rei, the other two found out later anyway, they're just being dramatic",
+                image: "./reito/08.png",
+                time: "hace 1 minuto",
+                upvotes: 10,
+                replies: [{
+                    user: "Rei",
+                    avatar: "./icons/reitowa.jpg",
+                    text: "you are really cute💖",
+                    time: "hace 1 minuto",
+                    upvotes: 50
+                }]
+            }]
+        }]
     }
 ];
 
@@ -859,36 +1004,41 @@ function createPostElement(post) {
 
     let mediaHTML = "";
     if (post.media) {
-        switch (post.media.type) {
-            case "image":
-                mediaHTML = `<div class="media-container"><img src="${post.media.url}" alt="Imagen"></div>`;
-                break;
-            case "video":
-                if (post.media.url.includes("youtube.com") || post.media.url.includes("youtu.be")) {
-                    const videoId = post.media.url.split('v=')[1]?.split('&')[0] || post.media.url.split('/').pop();
+        if (Array.isArray(post.media)){
+            mediaHTML = createCarousel(post.media);
+        }
+        else{
+            switch (post.media.type) {
+                case "image":
+                    mediaHTML = `<div class="media-container"><img src="${post.media.url}" alt="Imagen"></div>`;
+                    break;
+                case "video":
+                    if (post.media.url.includes("youtube.com") || post.media.url.includes("youtu.be")) {
+                        const videoId = post.media.url.split('v=')[1]?.split('&')[0] || post.media.url.split('/').pop();
+                        mediaHTML = `
+                            <div class="media-container">
+                                <iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                            </div>`;
+                    } else {
+                        mediaHTML = `
+                            <div class="media-container">
+                                <video controls>
+                                    <source src="${post.media.url}" type="video/mp4">
+                                    Tu navegador no soporta videos.
+                                </video>
+                            </div>`;
+                    }
+                    break;
+                case "audio":
                     mediaHTML = `
-                        <div class="media-container">
-                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="${post.media.url}" type="audio/mpeg">
+                                Tu navegador no soporta audio.
+                            </audio>
                         </div>`;
-                } else {
-                    mediaHTML = `
-                        <div class="media-container">
-                            <video controls>
-                                <source src="${post.media.url}" type="video/mp4">
-                                Tu navegador no soporta videos.
-                            </video>
-                        </div>`;
-                }
-                break;
-            case "audio":
-                mediaHTML = `
-                    <div class="audio-player">
-                        <audio controls>
-                            <source src="${post.media.url}" type="audio/mpeg">
-                            Tu navegador no soporta audio.
-                        </audio>
-                    </div>`;
-                break;
+                    break;
+            }
         }
     }
 
@@ -929,7 +1079,168 @@ function createPostElement(post) {
             </button>
         </div>
     `;
+
+     setTimeout(() => {
+        const carousel = postElement.querySelector('.carousel');
+        if (carousel) {
+            initCarousel(carousel);
+        }
+    }, 0);
+
     return postElement;
+}
+
+function createCarousel(images) {
+    if (!images || images.length === 0) return '';
+    
+    if (images.length === 1) {
+        return `<div class="media-container"><img src="${images[0].url}" alt="Imagen"></div>`;
+    }
+    
+    let slidesHTML = images.map((img, index) => `
+        <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+            <img src="${img.url}" alt="Imagen ${index + 1}" loading="lazy">
+        </div>
+    `).join('');
+    
+    let dotsHTML = images.map((_, index) => `
+        <span class="carousel-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>
+    `).join('');
+    
+    return `
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-track">
+                    ${slidesHTML}
+                </div>
+                <button class="carousel-btn prev-btn" aria-label="Anterior">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn next-btn" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+                <div class="carousel-dots">
+                    ${dotsHTML}
+                </div>
+                <span class="carousel-counter">1 / ${images.length}</span>
+            </div>
+        </div>
+    `;
+}
+
+function initCarousel(carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const counter = carousel.querySelector('.carousel-counter');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    
+    if (!track || slides.length === 0) return;
+    
+    let currentIndex = 0;
+    let totalSlides = slides.length;
+    let isTransitioning = false;
+    let autoPlayTimer = null;
+    
+    function goToSlide(index) {
+        if (isTransitioning) return;
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        
+        isTransitioning = true;
+        
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        if (counter) {
+            counter.textContent = `${index + 1} / ${totalSlides}`;
+        }
+        
+        currentIndex = index;
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 300);
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(currentIndex - 1);
+            resetAutoPlay();
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(currentIndex + 1);
+            resetAutoPlay();
+        });
+    }
+    
+    dots.forEach((dot) => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const index = parseInt(dot.getAttribute('data-index'));
+            if (!isNaN(index) && index !== currentIndex) {
+                goToSlide(index);
+                resetAutoPlay();
+            }
+        });
+    });
+    
+    carousel.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goToSlide(currentIndex - 1);
+            resetAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goToSlide(currentIndex + 1);
+            resetAutoPlay();
+        }
+    });
+    
+    function startAutoPlay() {
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => {
+            if (!carousel.closest('.post')?.classList.contains('hidden')) {
+                goToSlide(currentIndex + 1);
+            }
+        }, 5000);
+    }
+    
+    function resetAutoPlay() {
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
+    }
+    
+    if (totalSlides > 1) {
+        startAutoPlay();
+    }
+    
+    carousel.addEventListener('mouseenter', () => {
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        if (totalSlides > 1) {
+            startAutoPlay();
+        }
+    });
 }
 
 function displayRecentPosts() {
