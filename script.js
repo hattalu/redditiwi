@@ -980,6 +980,18 @@ const posts = [
                 }]
             }]
         }]
+    },{
+        id: "15",
+        title: "What do you think of the thumbnail for my new video?",
+        content: "I made a new video for my channel and my husband saw the thumbnail and just sighed, but I think it's pretty neat 😎",
+        upvotes: 100,
+        user: "WWX",
+        subreddit: "r/Youtube",
+        av_sub: "youtube.png",
+        media: {
+            type: "image",
+            url: "thumbnail.png"
+        }
     }
 ];
 
@@ -1275,7 +1287,7 @@ function attachRecentPostListeners() {
     document.querySelectorAll('.recent-post-item').forEach(item => {
         item.addEventListener('click', function() {
             const postId = this.getAttribute('data-post-id');
-            openPostFromId(postId);
+            window.location.href = `post.html?id=${postId}`;
         });
         item.style.cursor = 'pointer';
         item.addEventListener('mouseenter', function() {
@@ -1287,7 +1299,25 @@ function attachRecentPostListeners() {
     });
 }
 
+// function attachRecentPostListeners() {
+//     document.querySelectorAll('.recent-post-item').forEach(item => {
+//         item.addEventListener('click', function() {
+//             const postId = this.getAttribute('data-post-id');
+//             openPostFromId(postId);
+//         });
+//         item.style.cursor = 'pointer';
+//         item.addEventListener('mouseenter', function() {
+//             this.style.backgroundColor = '#1a1a1b';
+//         });
+//         item.addEventListener('mouseleave', function() {
+//             this.style.backgroundColor = '';
+//         });
+//     });
+// }
+
 function openPostFromId(postId) {
+    window.location.href = `post.html?id=${postId}`;
+
     const post = posts.find(p => p.id === postId);
     if (post) {
         localStorage.setItem("selectedPost", JSON.stringify(post));
@@ -1309,12 +1339,12 @@ function displayPosts() {
     
     document.querySelectorAll(".post").forEach((postDiv, idx) => {
         postDiv.addEventListener("click", function(e) {
-            if (
-                !e.target.closest('.vote-btn'))
-                {
-                    localStorage.setItem("selectedPost", JSON.stringify(posts[idx]));
-                    localStorage.setItem("selectedComments", JSON.stringify(posts[idx].comments || []));
-                    window.location.href = "post.html";
+            if (!e.target.closest('.vote-btn')) {
+                    const postId = posts[idx].id;
+                    window.location.href = `post.html?id=${postId}`;
+                    // localStorage.setItem("selectedPost", JSON.stringify(posts[idx]));
+                    // localStorage.setItem("selectedComments", JSON.stringify(posts[idx].comments || []));
+                    // window.location.href = "post.html";
                 }
         });
     });

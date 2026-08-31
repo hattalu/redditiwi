@@ -1,15 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
     createLightbox();
-    const post = JSON.parse(localStorage.getItem("selectedPost"));
-    const comments = JSON.parse(localStorage.getItem("selectedComments")) || [];
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
 
-    if (post && typeof createPostElement === 'function') {
+    let post = null;
+    let comments = [];
+
+    if (postId) {
+        const allPosts = JSON.parse(localStorage.getItem('posts')) || [];
+        post = allPosts.find(p => p.id === postId);
+        if (post) {
+            comments = post.comments || [];
+        }
+    }
+
+    if (!post){
+        post = JSON.parse(localStorage.getItem("selectedPost"));
+        comments = JSON.parse(localStorage.getItem("selectedComments")) || [];
+    }
+    
+    if (!post){
+        const postDetail = document.getElementById("postDetail");
+        if (postDetail) {
+            postDetail.innerHTML = `
+                <div class="post-not-found">
+                    <h2>Post no encontrado</h2>
+                    <p>El post que estás buscando no existe o ha sido eliminado.</p>
+                    <a href="index.html" style="color: #ff4500; text-decoration: none;">Volver al inicio</a>
+                </div>
+            `;
+        }
+        return;
+    }
+
+    if (typeof createPostElement === 'function') {
         const postDetail = document.getElementById("postDetail");
         if (postDetail) {
             postDetail.innerHTML = "";
             const postElement = createPostElement(post);
-            postDetail.appendChild(createPostElement(post));
-
+            postDetail.appendChild(postElement);
+            
             setTimeout(() => {
                 const carousel = postDetail.querySelector('.carousel');
                 if (carousel) {
@@ -30,55 +60,138 @@ document.addEventListener('DOMContentLoaded', function () {
             attachCommentVoteListeners();
         }
     }
+    // const post = JSON.parse(localStorage.getItem("selectedPost"));
+    // const comments = JSON.parse(localStorage.getItem("selectedComments")) || [];
 
+    // if (post && typeof createPostElement === 'function') {
+    //     const postDetail = document.getElementById("postDetail");
+    //     if (postDetail) {
+    //         postDetail.innerHTML = "";
+    //         const postElement = createPostElement(post);
+    //         postDetail.appendChild(createPostElement(post));
+
+    //         setTimeout(() => {
+    //             const carousel = postDetail.querySelector('.carousel');
+    //             if (carousel) {
+    //                 initCarousel(carousel);
+    //             }
+    //             setupImageClickListeners(postDetail);
+    //         }, 50);
+    //     }
+
+    //     const commentsContainer = document.getElementById("comments");
+    //     if (commentsContainer) {
+    //         commentsContainer.innerHTML = `
+    //             <h4>Comentarios</h4>
+    //             <div class="comment-list">
+    //                 ${renderComments(comments, 0, "", post.id)}
+    //             </div>
+    //         `;
+    //         attachCommentVoteListeners();
+    //     }
+    // }
+if (post) {
     const postVote = localStorage.getItem("vote_post_" + post.id);
-    const upvoteBtn = document.querySelector(".post .upvote");
-    const downvoteBtn = document.querySelector(".post .downvote");
-    const voteCount = document.querySelector(".post .vote-count");
+        const upvoteBtn = document.querySelector(".post .upvote");
+        const downvoteBtn = document.querySelector(".post .downvote");
+        const voteCount = document.querySelector(".post .vote-count");
 
-    if (postVote === "upvoted") upvoteBtn.classList.add("upvoted");
-    if (postVote === "downvoted") downvoteBtn.classList.add("downvoted");
+        if (postVote === "upvoted") upvoteBtn?.classList.add("upvoted");
+        if (postVote === "downvoted") downvoteBtn?.classList.add("downvoted");
 
-    const savedVotes = localStorage.getItem("votes_post_" + post.id);
-    if (savedVotes !== null) voteCount.textContent = savedVotes;
+        const savedVotes = localStorage.getItem("votes_post_" + post.id);
+        if (savedVotes !== null && voteCount) voteCount.textContent = savedVotes;
 
-    upvoteBtn.addEventListener("click", function () {
-        if (!this.classList.contains("upvoted")) {
-            this.classList.add("upvoted");
-            localStorage.setItem("vote_post_" + post.id, "upvoted");
+        if (upvoteBtn) {
+            upvoteBtn.addEventListener("click", function () {
+                if (!this.classList.contains("upvoted")) {
+                    this.classList.add("upvoted");
+                    localStorage.setItem("vote_post_" + post.id, "upvoted");
 
-            if (downvoteBtn.classList.contains("downvoted")) {
-                downvoteBtn.classList.remove("downvoted");
-                voteCount.textContent = parseInt(voteCount.textContent) + 2;
-            } else {
-                voteCount.textContent = parseInt(voteCount.textContent) + 1;
-            }
-        } else {
-            this.classList.remove("upvoted");
-            localStorage.removeItem("vote_post_" + post.id);
-            voteCount.textContent = parseInt(voteCount.textContent) - 1;
+                    if (downvoteBtn?.classList.contains("downvoted")) {
+                        downvoteBtn.classList.remove("downvoted");
+                        voteCount.textContent = parseInt(voteCount.textContent) + 2;
+                    } else {
+                        voteCount.textContent = parseInt(voteCount.textContent) + 1;
+                    }
+                } else {
+                    this.classList.remove("upvoted");
+                    localStorage.removeItem("vote_post_" + post.id);
+                    voteCount.textContent = parseInt(voteCount.textContent) - 1;
+                }
+                localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
+            });
         }
-        localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
-    });
 
-    downvoteBtn.addEventListener("click", function () {
-        if (!this.classList.contains("downvoted")) {
-            this.classList.add("downvoted");
-            localStorage.setItem("vote_post_" + post.id, "downvoted");
+        if (downvoteBtn) {
+            downvoteBtn.addEventListener("click", function () {
+                if (!this.classList.contains("downvoted")) {
+                    this.classList.add("downvoted");
+                    localStorage.setItem("vote_post_" + post.id, "downvoted");
 
-            if (upvoteBtn.classList.contains("upvoted")) {
-                upvoteBtn.classList.remove("upvoted");
-                voteCount.textContent = parseInt(voteCount.textContent) - 2;
-            } else {
-                voteCount.textContent = parseInt(voteCount.textContent) - 1;
-            }
-        } else {
-            this.classList.remove("downvoted");
-            localStorage.removeItem("vote_post_" + post.id);
-            voteCount.textContent = parseInt(voteCount.textContent) + 1;
+                    if (upvoteBtn?.classList.contains("upvoted")) {
+                        upvoteBtn.classList.remove("upvoted");
+                        voteCount.textContent = parseInt(voteCount.textContent) - 2;
+                    } else {
+                        voteCount.textContent = parseInt(voteCount.textContent) - 1;
+                    }
+                } else {
+                    this.classList.remove("downvoted");
+                    localStorage.removeItem("vote_post_" + post.id);
+                    voteCount.textContent = parseInt(voteCount.textContent) + 1;
+                }
+                localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
+            });
         }
-        localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
-    });
+    }
+    // const postVote = localStorage.getItem("vote_post_" + post.id);
+    // const upvoteBtn = document.querySelector(".post .upvote");
+    // const downvoteBtn = document.querySelector(".post .downvote");
+    // const voteCount = document.querySelector(".post .vote-count");
+
+    // if (postVote === "upvoted") upvoteBtn.classList.add("upvoted");
+    // if (postVote === "downvoted") downvoteBtn.classList.add("downvoted");
+
+    // const savedVotes = localStorage.getItem("votes_post_" + post.id);
+    // if (savedVotes !== null) voteCount.textContent = savedVotes;
+
+    // upvoteBtn.addEventListener("click", function () {
+    //     if (!this.classList.contains("upvoted")) {
+    //         this.classList.add("upvoted");
+    //         localStorage.setItem("vote_post_" + post.id, "upvoted");
+
+    //         if (downvoteBtn.classList.contains("downvoted")) {
+    //             downvoteBtn.classList.remove("downvoted");
+    //             voteCount.textContent = parseInt(voteCount.textContent) + 2;
+    //         } else {
+    //             voteCount.textContent = parseInt(voteCount.textContent) + 1;
+    //         }
+    //     } else {
+    //         this.classList.remove("upvoted");
+    //         localStorage.removeItem("vote_post_" + post.id);
+    //         voteCount.textContent = parseInt(voteCount.textContent) - 1;
+    //     }
+    //     localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
+    // });
+
+    // downvoteBtn.addEventListener("click", function () {
+    //     if (!this.classList.contains("downvoted")) {
+    //         this.classList.add("downvoted");
+    //         localStorage.setItem("vote_post_" + post.id, "downvoted");
+
+    //         if (upvoteBtn.classList.contains("upvoted")) {
+    //             upvoteBtn.classList.remove("upvoted");
+    //             voteCount.textContent = parseInt(voteCount.textContent) - 2;
+    //         } else {
+    //             voteCount.textContent = parseInt(voteCount.textContent) - 1;
+    //         }
+    //     } else {
+    //         this.classList.remove("downvoted");
+    //         localStorage.removeItem("vote_post_" + post.id);
+    //         voteCount.textContent = parseInt(voteCount.textContent) + 1;
+    //     }
+    //     localStorage.setItem("votes_post_" + post.id, voteCount.textContent);
+    // });
 
     displayRecentPostsInPost();
 });
