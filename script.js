@@ -924,7 +924,7 @@ const posts = [
                 replies: [{
                     user: "Towa",
                     avatar: "./icons/reitowa.jpg",
-                    text: "yeah you are my boyfriend, i algo have your chat pinned on my phone",
+                    text: "yeah you are my boyfriend, i also have your chat pinned on my phone",
                     image: "./reito/14.png",
                     time: "hace 1 minuto",
                     upvotes: 5,
@@ -939,7 +939,34 @@ const posts = [
                             avatar: "./icons/reitowa.jpg",
                             text: "your name is too long, i got lazy",
                             time: "hace 1 minuto",
-                            upvotes: -1
+                            upvotes: -1,
+                            replies: [{
+                                user: "Kotarou",
+                                avatar: "./icons/kotarou.jpg",
+                                text: "OH BUT IF REI'S NAME WERE LONGER YOU'D SAVE IT IN FULL RIGHT??",
+                                time: "hace 1 minuto",
+                                upvotes: 0,
+                                replies: [{
+                                    user: "Towa",
+                                    avatar: "./icons/reitowa.jpg",
+                                    text: "yeah, but id have to shorten it to moan it",
+                                    time: "hace 1 minuto",
+                                    upvotes: 1,
+                                    replies: [{
+                                        user: "Rei",
+                                        avatar: "./icons/reitowa.jpg",
+                                        text: "TOWA!",
+                                        time: "hace 1 minuto",
+                                        upvotes: 1
+                                    },{
+                                        user: "Kotarou",
+                                        avatar: "./icons/kotarou.jpg",
+                                        text: "I HATE YOU TWO💀💀",
+                                        time: "hace 1 minuto",
+                                        upvotes: 0
+                                    }]
+                                }]
+                            }]
                         }]
                     }]
                 }]
@@ -974,9 +1001,23 @@ const posts = [
                 replies: [{
                     user: "Rei",
                     avatar: "./icons/reitowa.jpg",
-                    text: "you are really cute💖",
+                    text: "you are really cute💖 but if you want photos of me, you can just ask me for them 💖",
                     time: "hace 1 minuto",
-                    upvotes: 50
+                    upvotes: 50,
+                    replies: [{
+                        user: "Towa",
+                        avatar: "./icons/reitowa.jpg",
+                        text: "ok wait at home naked",
+                        time: "hace 1 minuto",
+                        upvotes: 1,
+                        replies: [{
+                            user: "Rei",
+                            avatar: "./icons/reitowa.jpg",
+                            text: "eh? o-okay i mean wait! Don't say that here Towa!",
+                            time: "hace 1 minuto",
+                            upvotes: 1
+                        }]
+                    }]
                 }]
             }]
         }]
