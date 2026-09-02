@@ -1023,16 +1023,66 @@ const posts = [
         }]
     },{
         id: "15",
-        title: "What do you think of the thumbnail for my new video?",
-        content: "I made a new video for my channel and my husband saw the thumbnail and just sighed, but I think it's pretty neat 😎",
+        title: "I made a meme for my friends and they didn't appreciate it",
+        content: "I even added pictures of them to tell their story, and yet one of them still got angry, saying I was being rude. 废话!",
         upvotes: 100,
-        user: "WWX",
-        subreddit: "r/Youtube",
-        av_sub: "youtube.png",
+        user: "Mayu",
+        subreddit: "r/Romance",
+        av_sub: "romance.jgg",
         media: {
             type: "image",
-            url: "thumbnail.png"
-        }
+            url: "curi.png"
+        },
+        time: "hace 1 hora",
+        timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).getTime(),
+        comments: [{
+            user: "Towa",
+            avatar: "./icons/reitowa.jpg",
+            text: "I didnt say that",
+            time: "hace 1 hora",
+            upvotes: 1,
+            replies: [{
+                user: "Mayu",
+                avatar: "mayu.png",
+                text: "Rei got mad!",
+                time: "hace 1 hora",
+                upvotes: 1,
+                replies: [{
+                    user: "Rei",
+                    avatar: "./icons/reitowa.jpg",
+                    text: "ofc i got mad! You portrayed Towa as a bum!",
+                    time: "hace 1 hora",
+                    upvotes: 1,
+                    replies: [{
+                        user: "Towa",
+                        avatar: "./icons/reitowa.jpg",
+                        text: "its ok Rei, u're the one who takes care of me, dresses, cooks for me, and fucks me w ur big dick everyday. u pay for my things too. Im your bum",
+                        time: "hace 1 hora",
+                        upvotes: 1,
+                        replies: [{
+                            user: "Kotarou",
+                            avatar: "kotarou.jpg",
+                            text: "Was it necessary to add the part about the big dick?",
+                            time:"hace 1 hora",
+                            upvotes: -1,
+                            replies: [{
+                                user: "Towa",
+                                avatar: "./icons/reitowa.jpg",
+                                text: "yeah, Rei has a fucking big dick.",
+                                time: "hace 1 hora",
+                                upvotes: 10
+                            }]
+                        },{
+                            user: "Rei",
+                            avatar: "./icons/reitowa.jpg",
+                            text: "Towa! Ahh- the point is you are not a bum!",
+                            time: "hace 1 hora",
+                            upvotes: 1
+                        }]
+                    }]
+                }]
+            }]
+        }]
     }
 ];
 
