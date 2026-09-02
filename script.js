@@ -1028,7 +1028,7 @@ const posts = [
         upvotes: 100,
         user: "Mayu",
         subreddit: "r/Romance",
-        av_sub: "romance.jgg",
+        av_sub: "romance.jpg",
         media: {
             type: "image",
             url: "curi.png"
@@ -1043,7 +1043,7 @@ const posts = [
             upvotes: 1,
             replies: [{
                 user: "Mayu",
-                avatar: "mayu.png",
+                avatar: "./icons/mayu.png",
                 text: "Rei got mad!",
                 time: "hace 1 hora",
                 upvotes: 1,
@@ -1062,7 +1062,7 @@ const posts = [
                         replies: [{
                             user: "Kotarou",
                             avatar: "kotarou.jpg",
-                            text: "Was it necessary to add the part about the big dick?",
+                            text: "Was it necessary to add the part about the big dick?💀💀",
                             time:"hace 1 hora",
                             upvotes: -1,
                             replies: [{
@@ -1075,9 +1075,30 @@ const posts = [
                         },{
                             user: "Rei",
                             avatar: "./icons/reitowa.jpg",
-                            text: "Towa! Ahh- the point is you are not a bum!",
+                            text: "Towa! Ahh- the point is you are not a bum! You are really precious to me, dont say that",
                             time: "hace 1 hora",
-                            upvotes: 1
+                            upvotes: 1,
+                            replies: [{
+                                user: "Towa",
+                                avatar: "./icons/reitowa.jpg",
+                                text: "ok not 'your bum', only yours",
+                                time: "hace 1 hora",
+                                upvotes: 100,
+                                replies: [{
+                                    user: "Rei",
+                                    avatar: "./icons/reitowa.jpg",
+                                    text: "Arata here, Rei just collapsed 😅 Can you come to the Roost, Towa?",
+                                    time: "hace 1 hora",
+                                    upvotes: 1,
+                                    replies: [{
+                                        user: "Towa",
+                                        avatar: "./icons/reitowa.jpg",
+                                        text: "goin'",
+                                        time: "hace 1 hora",
+                                        upvotes: 1
+                                    }]
+                                }]
+                            }]
                         }]
                     }]
                 }]
